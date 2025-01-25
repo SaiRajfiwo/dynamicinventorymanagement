@@ -3,7 +3,6 @@ import InventoryTable from "./components/InventoryTable";
 import InventoryForm from "./components/InventoryForm";
 import Filter from "./components/Filter";
 
-
 const App = () => {
   const [items, setItems] = useState([
     { id: 1, name: "Apple", category: "Fruits", quantity: 15 },
@@ -36,39 +35,53 @@ const App = () => {
     : items;
 
   return (
-    
     <div className="min-h-screen bg-gray-100">
       {/* Navigation Bar */}
       <nav className="bg-purple-600 text-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-            <img src="/favicon.png" alt="Logo" className="w-8 h-8" />
-              <h1 className="text-2xl font-bold hover:text-yellow-300">Dynamic Inventory Management</h1>
+              <img src="/favicon.png" alt="Logo" className="w-8 h-8" />
+              <h1 className="text-xl sm:text-2xl font-bold hover:text-yellow-300">
+                Dynamic Inventory Management
+              </h1>
             </div>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:bg-purple-500 hover:text-yellow-300 px-3 font-bold py-2 rounded-md text-l">
+            <div className="hidden md:flex space-x-4">
+              <a
+                href="#"
+                className="hover:bg-purple-500 hover:text-yellow-300 px-3 font-bold py-2 rounded-md text-sm sm:text-l"
+              >
                 Home
               </a>
-              <a href="#" className="hover:bg-purple-500 hover:text-yellow-300 px-3 font-bold py-2 rounded-md text-l">
+              <a
+                href="#"
+                className="hover:bg-purple-500 hover:text-yellow-300 px-3 font-bold py-2 rounded-md text-sm sm:text-l"
+              >
                 Login
               </a>
-              <a href="#" className="hover:bg-purple-500 hover:text-yellow-300 px-3 font-bold py-2 rounded-md text-l">
+              <a
+                href="#"
+                className="hover:bg-purple-500 hover:text-yellow-300 px-3 font-bold py-2 rounded-md text-sm sm:text-l"
+              >
                 Sign Up
               </a>
+            </div>
+            <div className="md:hidden">
+              <button className="text-yellow-300 px-3 py-2 rounded-md">
+                Menu
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
-
       {/* Main Content */}
       <div className="max-w-4xl mt-8 mx-auto p-4">
-      <h2 className="text-3xl font-bold text-center mb-8">
+        <h2 className="text-xl sm:text-3xl font-bold text-center mb-8">
           <span className="text-rose-600">Dynamic</span>{" "}
           <span className="text-rose-600">Inventory</span>{" "}
           <span className="text-rose-600">Management</span>
-      </h2>
+        </h2>
 
         <InventoryForm onAddItem={handleAddItem} />
         <Filter onFilter={setFilter} />
@@ -78,6 +91,9 @@ const App = () => {
           onDelete={handleDeleteItem}
           onSort={handleSort}
         />
+        <p className="text-center mt-14 text-gray-600 text-sm sm:text-base">
+          © 2024 Dynamic Inventory Management. All Rights Reserved.
+        </p>
       </div>
     </div>
   );
