@@ -92,7 +92,7 @@ const App = () => {
           onSort={handleSort}
         />
         <p className="text-center mt-14 text-gray-600 text-sm sm:text-base">
-          © 2024 Dynamic Inventory Management. All Rights Reserved.
+          © 2025 Dynamic Inventory Management. All Rights Reserved.
         </p>
       </div>
     </div>
